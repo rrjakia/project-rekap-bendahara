@@ -1,3 +1,21 @@
+let dataTransaksi = [];
+
+function tambahTransaksi(tanggal, jenis, keterangan, jumlah) {
+  const transaksiBaru = {
+    tanggal: tanggal,
+    jenis: jenis,
+    keterangan: keterangan,
+    jumlah: jumlah
+  };
+
+  dataTransaksi.push(transaksiBaru);
+
+  console.log('Transaksi berhasil ditambahkan:', transaksiBaru);
+  console.log('Daftar Transaksi Saat Ini:', dataTransaksi);
+}
+
+console.log('Data Transaksi Awal:', dataTransaksi);
+
 function cariTransaksi(keyword) {
   const hasilCari = dataTransaksi.filter(item =>
     item.tanggal.includes(keyword) ||
@@ -41,4 +59,5 @@ function tambahTransaksi(keterangan, jumlah, tipe) {
   console.log("Saldo Akhir      : Rp" + saldoAkhir.toLocaleString('id-ID'));
   console.log("============================\n");
 }
+
 
