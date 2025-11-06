@@ -119,3 +119,4 @@ while (true) {
 
   else console.log("Menu tidak valid, coba lagi!");
 }
+
