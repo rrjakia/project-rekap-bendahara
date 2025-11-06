@@ -14,8 +14,45 @@ function tambahTransaksi(tanggal, jenis, keterangan, jumlah) {
   console.log('Daftar Transaksi Saat Ini:', dataTransaksi);
 }
 
-console.log('Data Transaksi Awal:', dataTransaksi);
+console.log('Data Transaksi Awal:', dataTransaksi
+function tampilkanData(data = dataTransaksi) {
+    console.log("=== DAFTAR TRANSAKSI ===");
+  
+    if (data.length === 0) {
+      console.log("Belum ada data transaksi.");
+      return;
+    }
+  
+    data.forEach((item, index) => {
+      console.log(
+        `${index + 1}. Tanggal: ${item.tanggal}, ` +
+        `Jenis: ${item.jenis || "-"}, ` +
+        `Keterangan: ${item.keterangan}, ` +
+        Jumlah: Rp${item.jumlah}
+      );
+    });
+  
+    console.log("========================");
+  }
 
+  function tampilkanData() {
+  console.log("\n=== DAFTAR TRANSAKSI ===");
+
+  if (dataTransaksi.length === 0) {
+    console.log("Belum ada transaksi yang tersimpan.");
+    return; 
+  }
+
+  dataTransaksi.forEach((item, index) => {
+    console.log(`
+No         : ${index + 1}
+Tanggal    : ${item.tanggal}
+Jenis      : ${item.jenis}
+Keterangan : ${item.keterangan}
+Jumlah     : Rp ${item.jumlah}
+-------------------------------`);
+  });
+}
 function cariTransaksi(keyword) {
   const hasilCari = dataTransaksi.filter(item =>
     item.tanggal.includes(keyword) ||
@@ -59,5 +96,6 @@ function tambahTransaksi(keterangan, jumlah, tipe) {
   console.log("Saldo Akhir      : Rp" + saldoAkhir.toLocaleString('id-ID'));
   console.log("============================\n");
 }
+
 
 
