@@ -67,6 +67,19 @@ function urutkanTransaksi(urutan) {
   tampilkanData(dataCopy);
 }
 
+//fajar
+
+unction hitungSaldo() {
+  let pemasukan = 0;
+  let pengeluaran = 0;
+
+  dataTransaksi.forEach(item => {
+    if (item.jenis === "Pemasukan") pemasukan += item.jumlah;
+    else pengeluaran += item.jumlah;
+  });
+
+  const saldo = pemasukan - pengeluaran;
+
 // semua
 
 const prompt = require("prompt-sync")({ sigint: true });
@@ -119,4 +132,5 @@ while (true) {
 
   else console.log("Menu tidak valid, coba lagi!");
 }
+
 
